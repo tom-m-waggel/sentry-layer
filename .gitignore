@@ -1,0 +1,4 @@
+sentry-lambda-extension/node_modules
+sentry-lambda-extension/index.js
+extension.zip
+.DS_Store
