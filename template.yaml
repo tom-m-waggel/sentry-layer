@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Sentry Lambda Extension Layer
+
+Resources:
+  SentryLambdaExtension:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: sentry-lambda-extension
+      Description: Sentry Lambda extension for telemetry/logging
+      ContentUri: ./extension.zip
+      CompatibleRuntimes:
+        - provided.al2
+      LicenseInfo: MIT
+      RetentionPolicy: Retain
+
+Outputs:
+  LayerArn:
+    Description: ARN of the Lambda Layer
+    Value: !Ref SentryLambdaExtension
